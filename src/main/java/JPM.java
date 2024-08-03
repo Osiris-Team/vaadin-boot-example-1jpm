@@ -32,8 +32,12 @@ class ThisProject extends JPM.Project {
         addRepository("https://repo.maven.apache.org/maven2", false);
         addRepository("https://maven.vaadin.com/vaadin-addons", false);
 
-        // Force dependencies versions
+        // Force dependencies versions for duplicates
         forceImplementation("com.vaadin:vaadin-bom:" + vaadinVersion+":import").type = "pom";
+        forceImplementation("com.vaadin:open:8.5.0.1");
+        forceImplementation("commons-io:commons-io:2.16.1");
+        forceImplementation("jakarta.annotation:jakarta.annotation-api:2.1.1");
+        forceImplementation("org.eclipse.jetty.ee10:jetty-ee10-annotations:12.0.10");
 
         // Add dependencies
         implementation("com.vaadin:vaadin-core")
